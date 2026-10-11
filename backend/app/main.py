@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 from app.config import settings
-from app.routers import parishes, upload, data, templates, parish_data
+from app.routers import parishes, upload, data, templates, parish_data, work_orders
 
 # Import all models so create_all picks them up
 from app.models.parish import Parish  # noqa
@@ -34,6 +34,7 @@ app.include_router(upload.router, prefix="/api/upload", tags=["Upload"])
 app.include_router(data.router, prefix="/api/data", tags=["Data"])
 app.include_router(templates.router, prefix="/api/templates", tags=["Templates"])
 app.include_router(parish_data.router, prefix="/api/parishes", tags=["Parish Data"])
+app.include_router(work_orders.router, prefix="/api/parishes", tags=["Work Orders"])
 
 
 @app.get("/api/health")
