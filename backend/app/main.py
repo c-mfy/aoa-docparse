@@ -12,6 +12,7 @@ from app.models.extraction_template import ExtractionTemplate  # noqa
 from app.models.todo import Todo  # noqa
 from app.models.history_entry import HistoryEntry  # noqa
 from app.models.building import Building  # noqa
+from app.models.work_order import WorkOrder  # noqa
 
 # Create all tables
 Base.metadata.create_all(bind=engine)
